@@ -1,0 +1,13 @@
+% !TeX root = ../main.tex
+
+\chapter{Conclusion}\label{chapter:conclusion}
+
+This thesis explored the current state of virtualization techniques and examined their applicability to embedded systems testing. After evaluating various methods, Level 3 virtualization was selected for the project, given its suitability for separating software from hardware dependencies. Insights from real-time operating systems (RTOS) were used to understand similar virtualization techniques applied to areas closely aligned with this project.
+
+The objective of this work was to create a virtualized testing environment that enables early testing and debugging of BAC software modules without the need for physical hardware. This was achieved by replacing the actual ECU with a virtual ECU (vECU), using the vVirtualtarget tool to virtualize different software components of the ECU. Three separate shared objects—representing the application, boot manager, and bootloader—were generated, each having its own simulation environment.
+
+An adapter, vCan\_to\_silkit, was developed to facilitate communication between the vECU and the virtual CAN (vCAN) bus, allowing CAN messages to be exchanged with various test tools. The Silkit software was then used to integrate the vECU into a simulation environment, with the adapter acting as a participant.
+
+A unified simulation was created, enabling the software components to share data and replicate the actual behavior of the ECU more accurately. The timing interrupt function was reconfigured to synchronize the virtual system with real-time behavior by calling it every millisecond.
+
+With these adaptations, a virtualized testing environment was successfully developed, closely mirroring the behavior of a physical ECU. This environment not only provides early testing capabilities but also enhances debugging possibilities beyond the limitations of hardware-based testing.

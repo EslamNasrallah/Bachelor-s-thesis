@@ -1,0 +1,18 @@
+% !TeX root = ../main.tex
+
+\chapter{Discussion}\label{chapter:discussion}
+
+
+% Complete test coverage statistics
+% Integerate to the CI
+% CAN FD
+% make Ecu-test use vertual time
+% Level 4 vECU
+
+This chapter reflects on the key findings presented in the evaluation and explores potential improvements, future implementations, and broader directions for enhancing the virtualized testing environment.
+
+The results show that virtual timing events are now aligned with real-world timing, enabling accurate simulation of ECU behavior. The UDS requests from the test tool successfully retrieved certificates from the vECU, validating the accuracy of communication between the virtual and real components. Furthermore, the debugging process has become significantly more flexible, with the ability to set unlimited breakpoints—a substantial improvement over the hardware constraints of traditional ECU testing setups. This demonstrates that the virtualized test environment can effectively replicate the real test setup, providing an early and efficient way to test software modules before interacting with the physical ECU.
+
+A crucial next step involves integrating the virtual ECU (vECU) into the Continuous Integration/Continuous Testing (CI/CT) pipeline. Currently, the system involves manually bundling various components, which can be cumbersome for developers who need to make changes to the software. Developers should be able to work directly with their source code in their repositories without having to switch between different environments. Integrating the virtualized test environment into the CI pipeline would streamline this process, allowing developers to automatically trigger tests, make adjustments, and continuously monitor results.
+
+Looking ahead, one of the potential advancements in this area would be for testing tools, like ECU-Test, to enable time synchronization through a SIL Kit connector. This would allow all components of the virtual environment—such as the SutRunner and adapter—to be synchronized with the testing tool's virtual time. Although this feature is not yet available, if future versions of ECU-Test supported time synchronization, it could allow tests to be conducted in virtual time, significantly reducing testing duration. Currently, real-time testing can take days to complete, but with synchronized virtual time, the same tests could be completed much faster, allowing for more efficient testing and quicker software releases. 
